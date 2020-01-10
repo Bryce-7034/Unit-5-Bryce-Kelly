@@ -1,11 +1,16 @@
-public class Num {
+
+public class Num implements Comparable{
     private int num;
-    public void Num(){
+
+
+
+    public Num(int value){
+        this.num = value;
+    }
+    public Num(){
         num = 0;
     }
-    public void Num(int num){
-        this.num = num;
-    }
+
     public int getValue(){
         return num;
     }
@@ -19,5 +24,10 @@ public class Num {
     }
     public boolean equals(Num otherNum){
         return this.num == otherNum.num;
+    }
+
+    public int compareTo(Object obj){
+        Num compare = (Num)obj;
+        return this.getValue() - compare.getValue();
     }
 }
